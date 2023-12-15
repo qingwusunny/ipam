@@ -777,6 +777,8 @@ var _ = Describe("ipam", func() {
 			c := NetConf{
 				Type:             v1alpha1.AllocatedTypePod,
 				AllocateIdentify: "containerID",
+				K8sPodName:       "pod-unexist",
+				K8sPodNs:         "ns-unexist",
 			}
 			_ = ipam.ExecDel(&c)
 			Eventually(func(g Gomega) {
